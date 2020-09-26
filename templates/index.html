@@ -1,0 +1,406 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bot Banner</title>
+    <link rel="icon" href="img/Fevicon.png" type="image/png">
+
+    <link rel="stylesheet" href="{% static 'vendors/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/fontawesome/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/themify-icons/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/linericon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/owl-carousel/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!--================Header Menu Area =================-->
+    <!-- <header class=" header_area ">
+        <div class="main_menu ">
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <div class="container box_1620 "> -->
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <!-- <a class="navbar-brand logo_h " href="index.html "><img src="{% static 'img/logo.png' %} " alt=" "></a> -->
+    <!-- <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarSupportedContent " aria-controls="navbarSupportedContent " aria-expanded="false " aria-label="Toggle navigation ">
+            <span class="icon-bar "></span>
+            <span class="icon-bar "></span>
+            <span class="icon-bar "></span>
+          </button> -->
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- <div class="collapse navbar-collapse offset " id="navbarSupportedContent ">
+                        <ul class="nav navbar-nav menu_nav justify-content-end ">
+                            <li class="nav-item"><a class="nav-link " href="index.html ">Home</a></li> -->
+    <!-- <li class="nav-item "><a class="nav-link " href="feature.html ">Feature</a></li>
+                            <li class="nav-item "><a class="nav-link " href="pricing.html ">Price</a>
+                                <li class="nav-item submenu dropdown ">
+                                    <a href="# " class="nav-link dropdown-toggle " data-toggle="dropdown " role="button " aria-haspopup="true " aria-expanded="false ">Pages</a>
+                                    <ul class="dropdown-menu ">
+                                        <li class="nav-item "><a class="nav-link " href="blog.html ">Blog</a></li>
+                                        <li class="nav-item "><a class="nav-link " href="blog-details.html ">Blog Details</a></li>
+                                    </ul>
+                                </li> -->
+    <!-- <li class="nav-item"><a class="nav-link " href="contact.html ">Contact</a></li>
+                        </ul>
+
+                        <ul class="navbar-right ">
+                            <li class="nav-item ">
+                                <button class="button button-header bg ">Sign up</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header> -->
+    <!--================Header Menu Area =================-->
+
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+        
+        $color: #e24040;
+        body {
+            height: 100vh;
+            margin: 0;
+            background: #DEDEDE;
+            color: #5a6674;
+            font-size: 13px;
+            font-family: 'Roboto', sans-serif;
+            overflow: hidden;
+        }
+        /*--------------------
+App
+--------------------*/
+        
+        .search-form {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            width: 350px;
+            height: 40px;
+            border-radius: 40px;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+            transform: translate(-50%, -50%);
+            background: #fff;
+            transition: all 0.3s ease;
+            &.focus {
+                box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+            }
+        }
+        
+        .search-input {
+            position: absolute;
+            top: 10px;
+            left: 38px;
+            font-size: 14px;
+            background: none;
+            color: #5a6674;
+            width: 80%;
+            height: 20px;
+            border: none;
+            appearance: none;
+            outline: none;
+            &::-webkit-search-cancel-button {
+                appearance: none;
+            }
+        }
+        
+        .search-button {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            height: 20px;
+            width: 20px;
+            padding: 0;
+            margin: 0;
+            border: none;
+            background: none;
+            outline: none!important;
+            cursor: pointer;
+            & svg {
+                width: 20px;
+                height: 20px;
+                fill: #5a6674;
+            }
+        }
+        
+        .search-option {
+            position: absolute;
+            text-align: right;
+            top: 10px;
+            right: 15px;
+            div {
+                position: relative;
+                display: inline-block;
+                margin: 0 1px;
+                cursor: pointer;
+                input {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    opacity: 0.01;
+                    cursor: pointer;
+                }
+                span {
+                    position: absolute;
+                    display: block;
+                    text-align: center;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    opacity: 0;
+                    background: #929AA3;
+                    color: #fff;
+                    font-size: 9px;
+                    letter-spacing: 1px;
+                    line-height: 1;
+                    text-transform: uppercase;
+                    padding: 4px 7px;
+                    border-radius: 12px;
+                    top: -18px;
+                    transition: all .2s ease-in-out;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -3px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        border-top: 4px solid #929AA3;
+                        border-left: 4px solid transparent;
+                        border-right: 4px solid transparent;
+                        transition: all .2s ease-in-out;
+                    }
+                }
+                &:hover span {
+                    opacity: 1;
+                    top: -21px;
+                }
+                label {
+                    display: block;
+                    cursor: pointer;
+                }
+                svg {
+                    height: 20px;
+                    width: 20px;
+                    fill: #5a6674;
+                    opacity: 0.6;
+                    transition: all .2s ease-in-out;
+                    pointer-events: none;
+                }
+                &:hover svg {
+                    opacity: 1;
+                }
+                input:checked+label svg {
+                    fill: $color;
+                    opacity: .9;
+                }
+                input:checked+label span {
+                    background: $color;
+                    &::after {
+                        border-top-color: $color;
+                    }
+                }
+            }
+        }
+    </style>
+    <style>
+        .loader {
+            border: 3px solid rgba(0, 0, 0, 0);
+            border-top: 3px solid #69edc6;
+            border-right: 3px solid #69edc6;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+            display: block;
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @media only screen and (max-width: 500px) {
+            #mobile-wrap {
+                height: 65% !important;
+            }
+            #description {
+                padding-top: 0 !important;
+            }
+        }
+        
+        #description {
+            color: white;
+            padding-top: 22em;
+            text-align: center;
+        }
+    </style>
+
+    <main class="side-main" style="height: 100%;">
+        <!--================ Hero sm Banner start =================-->
+        <section class="hero-banner mb-30px" style="height: 100%;">
+            <div class="container " style="height: 90%;min-width: 90%; ">
+                <div class="row " style="height: 100%; ">
+                    <div class="col-lg-7" style="height: 450px;right: 5%;">
+                        <div class="hero-banner__img" style="width: 100%;height: 100%;padding-left: 12%;">
+                            <img class="img-fluid" src="{% static 'img/man_vs_ai.png' %}" alt=" " style="margin-top: 5%;">
+                            <p id="description">With the help of AI, we aim to fight the spread of rogue bots on social media. Just give the link to the post and we will do the rest. Results can also be downloaded as a CSV file</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 pt-5" id="mobile-wrap" style="height: 80%; ">
+                        <div class="hero-banner__content" style="height: 70%; ">
+                            <div class="container">
+                                <div class="loader" id='spinner' style="display: inline-table;float: right;display:none;"></div>
+                                <form method="post" action="/getlink" class="search-form" style="width: 90%;display: inline-table;left: 45%;">
+                                    {% csrf_token %}
+                                    <input name="search-input" type="search" placeholder="Instagram Post Link" class="search-input" id="search-input">
+                                </form>
+                                <div>
+                                    <p id="error-msg" style="justify-content: center;display: flex;color: red;"></p>
+                                </div>
+                                <div id="analysis-container" style="visibility: hidden;">
+                                    <div id="analysis" style="display: flex;width: 100%;justify-content: center;margin-top: 10%;">
+                                        <div style="margin-right: 5%;">
+                                            <div class="circle" id="circles-1">
+                                            </div>
+                                            <h5 style="color: white; font-size: 1vw; margin-top: 5%; text-align: center;">Normal Comments</h5>
+                                        </div>
+                                        <div style="margin-right: 5%;">
+                                            <div class="circle" id="circles-2"></div>
+                                            <h5 style="color: white; margin: 0%;font-size: 1vw; margin-top: 5%;text-align: center;">Explicit Bots Reported</h5>
+                                        </div>
+                                        <div style="margin-right: 5%;">
+                                            <div class="circle" id="circles-3"></div>
+                                            <h5 style="color: white; margin-left: 8%;font-size: 1vw; margin-top: 5%;text-align: center;">Promo Bots Reported</h5>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <form method="post" action="/download" id="download-form">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-light" id="download" style="display: flex;justify-content: center;margin: 0 auto;margin-top: 35px;">Download CSV</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+
+
+        <script src="{% static 'js/circle.js' %} "></script>
+        <script>
+            $(document).ready(function() {
+                $('.download-form').click(function(e) {
+                    e.preventDefault();
+                    $.ajax({ // create an AJAX call...
+                        data: {
+                            csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+                            download: true
+                        },
+                        type: 'POST',
+                        url: '/download',
+                        success: function(response) { // on success..
+                        }
+                    })
+                })
+            })
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.search-form').submit(function(e) { // catch the form's submit event
+                    e.preventDefault();
+                    document.getElementById('spinner').style.display = "inherit"
+                    var a = document.getElementById("search-input").value;
+
+                    $.ajax({ // create an AJAX call...
+                        data: {
+                            csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val(),
+                            search_input: a
+                        },
+                        type: 'POST',
+                        url: '/getlink',
+                        success: function(response) { // on success..
+                            document.getElementById("error-msg").innerHTML = "";
+                            response = JSON.parse(response);
+                            tot_count = response['total'];
+                            tot_eb = response['explicit_bots'];
+                            tot_pb = response['promo_bots'];
+                            elems = [tot_count - (tot_eb + tot_pb), tot_eb, tot_pb];
+                            var colors = [
+                                    ['#ffffff', 'red'],
+                                    ['#ffffff', '#EFB917'],
+                                    ['#ffffff', '#45AEEA']
+                                ],
+                                circles = [];
+
+                            for (var i = 1; i <= 3; i++) {
+                                var child = document.getElementById('circles-' + i),
+                                    // percentage = 31.42 + (i * 9.84),
+                                    percentage = (elems[i - 1] / tot_count) * 100,
+
+                                    circle = Circles.create({
+                                        id: child.id,
+                                        value: percentage,
+                                        // text: Math.trunc(percentage) + '%',
+                                        text: elems[i - 1],
+                                        radius: getWidth(),
+                                        width: 10,
+                                        colors: colors[i - 1]
+                                    });
+
+                                circles.push(circle);
+                            }
+
+                            window.onresize = function(e) {
+                                for (var i = 0; i < circles.length; i++) {
+                                    circles[i].updateRadius(getWidth());
+                                }
+                            };
+
+                            function getWidth() {
+                                if (window.innerWidth < 1200) {
+                                    return window.innerWidth / 15;
+                                } else {
+                                    return 86;
+                                }
+                            }
+                            document.getElementById('spinner').style.display = "none";
+                            document.getElementById('analysis-container').style.visibility = "visible";
+
+                        },
+                        error: function(xhr, status, error) {
+                            var errorMessage = xhr.status + ': ' + xhr.statusText
+                            console.log('Error - ' + errorMessage);
+                            document.getElementById("error-msg").innerHTML = "Invalid link. Please make sure the page is not private";
+                            document.getElementById('spinner').style.display = "none"
+                        }
+                    });
+                    return false;
+                });
+            });
+        </script>
+        <script src="{% static 'vendors/jquery/jquery-3.2.1.min.js' %} "></script>
+        <script src="{% static 'vendors/bootstrap/bootstrap.bundle.min.js' %} "></script>
+        <script src="{% static 'vendors/owl-carousel/owl.carousel.min.js' %} "></script>
+        <script src="{% static 'js/jquery.ajaxchimp.min.js' %} "></script>
+        <script src="{% static 'js/mail-script.js' %} "></script>
+        <script src="{% static 'js/main.js' %} "></script>
+</body>
+
+</html>
